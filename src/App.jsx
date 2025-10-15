@@ -12,6 +12,7 @@ import Checkout from "./pages/checkout/Checkout"
 import SmoothScroll from "./components/SmoothScroll"
 import Products from "./pages/Products/Products"
 import ProductDetails from "./pages/Products/ProductDetails"
+import Error404 from "./pages/Error404"
 // import Checkout from "./pages/Checkout"
 
 function App() {
@@ -26,12 +27,14 @@ function App() {
           <Route path="/" element={<Home/>} />
           <Route path="/about" element={<About/>} />
           <Route path="/contact" element={<Contacts/>} />
-           <Route path="/blogs" element={<Blogs/>} />
-            <Route path="/services" element={<Services/>} />
-             <Route path="/cart" element={<Cart/>} />
-              <Route path="/product/:id" element={<ProductDetails />} />
-             <Route path="/checkout" element={<Checkout/>} />
-             <Route path="/products" element={<Products/>} />
+          <Route path="/blogs" element={<Blogs/>} />
+          <Route path="/services" element={<Services/>} />
+          <Route path="/cart" element={<Cart/>} />
+          <Route path="/product/:id" element={<ProductDetails />} />
+          <Route path="/checkout" element={<Checkout/>} />
+          <Route path="/products" element={<Products/>} />
+          <Route path="/articles/:id" element={<Blogs/>} />
+          <Route path="*" element={<Error404/>} />
         </Routes>
         <Footer/>
       </Router>

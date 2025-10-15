@@ -60,9 +60,11 @@ export default function Contacts() {
             <div>
               <h4 className="font-medium text-lg">Email us</h4>
               <p className="text-gray-600">
-                support@greateawala.com
+                gyanendra9506@gmail.com
                 <br />
-                care@greateawala.com
+                shubhamyadav0@zohomai.in
+                <br />
+                
               </p>
             </div>
           </div>
@@ -73,9 +75,10 @@ export default function Contacts() {
             <div>
               <h4 className="font-medium text-lg">Call us</h4>
               <p className="text-gray-600">
-                +91 98765 43210
+                +91 9871326378
                 <br />
-                +91 98765 43211
+                +91 9792781778
+                <br /> +91 8960025304
               </p>
             </div>
           </div>

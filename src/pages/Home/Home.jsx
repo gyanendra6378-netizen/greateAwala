@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Lenis from "@studio-freight/lenis";
+import SEO from "../../components/SEO";
 
 import img1 from "../../../public/bg-1.png";
 import img2 from "../../../public/bg-2.png";
@@ -59,6 +60,13 @@ const Home = () => {
 
   return (
     <SmoothScroll>
+      <SEO
+        title="MyAwala - Pure Amla Products for Healthy Living"
+        description="Discover 100% natural Amla (Awala) products including fresh juice, candies, pickles, powder, and more. Boost immunity, improve health, and enjoy authentic taste with MyAwala."
+        keywords="amla products, awala juice, amla candy, amla powder, amla pickle, natural health products, immunity booster, vitamin c, ayurvedic products, healthy snacks, great awala"
+        url="https://myawala.com"
+        image="https://myawala.com/bg-1.png"
+      />
       <div>
         <section className="relative h-screen w-full overflow-hidden">
           {/* Animated background image slider */}

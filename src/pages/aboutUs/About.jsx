@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Lenis from "@studio-freight/lenis";
+import SEO from "../../components/SEO";
 import Articles from "./Acticles"; // keep your original import name
 import img1 from "/bg-1.png";
 
@@ -71,6 +72,13 @@ const About = () => {
 
   return (
     <div>
+      <SEO
+        title="About MyAwala - Pure Amla Products for Wellness"
+        description="Learn about MyAwala's mission to deliver 100% natural and chemical-free Amla products. Discover our journey from farm to table, ensuring purity and wellness in every product."
+        keywords="about myawala, about great awala, amla company, natural amla products, ayurvedic products, organic amla, health and wellness"
+        url="https://myawala.com/about"
+        image="https://myawala.com/bg-1.png"
+      />
       {/* About Section */}
       <div className="max-w-7xl mx-auto px-4 py-10 bg-white text-gray-800">
         {/* Header */}

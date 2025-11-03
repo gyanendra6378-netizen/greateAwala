@@ -1,7 +1,8 @@
 import { useState, useEffect, useRef } from "react";
 import { FaFacebookF, FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ShoppingCart } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
+import { useCart } from "../contexts/CartContext";
 
 const Navbar = () => {
   const [showNavbar, setShowNavbar] = useState(true);
@@ -10,6 +11,7 @@ const Navbar = () => {
   const [cartOpen, setCartOpen] = useState(false);
   const cartRef = useRef(null);
   const location = useLocation();
+  const { getCartItemsCount } = useCart();
 
   // Close cart if clicked outside
   useEffect(() => {
@@ -58,7 +60,7 @@ const Navbar = () => {
       </div>
 
       {/* Main Navbar */}
-      <nav className=" py-3 shadow-sm px-20 flex justify-between items-center relative">
+      <nav className="py-3 shadow-sm px-4 md:px-20 flex justify-between items-center relative">
         {/* Logo */}
         <div className="flex items-center gap-2">
           {/* <div className="border-2 border-[#b5765b] w-5 h-5"></div> */}
@@ -137,16 +139,41 @@ const Navbar = () => {
           })}
         </ul>
 
-        {/* Social Icons */}
-        <div className="hidden md:flex items-center gap-4 text-[#b5765b] text-sm">
-          <FaFacebookF />
-          <FaInstagram />
-          <FaTwitter />
-          <FaYoutube />
+        {/* Right Section - Social + Cart */}
+        <div className="hidden md:flex items-center gap-6">
+          {/* Social Icons */}
+          <div className="flex items-center gap-4 text-[#b5765b] text-sm">
+            <FaFacebookF />
+            <FaInstagram />
+            <FaTwitter />
+            <FaYoutube />
+          </div>
+
+          {/* Cart Icon */}
+          <Link to="/cart" className="relative">
+            <button className="relative p-2 hover:bg-gray-100 rounded-full transition">
+              <ShoppingCart size={22} className="text-[#b5765b]" />
+              {getCartItemsCount() > 0 && (
+                <span className="absolute top-0 right-0 w-5 h-5 bg-red-500 text-white text-xs font-bold rounded-full flex items-center justify-center">
+                  {getCartItemsCount()}
+                </span>
+              )}
+            </button>
+          </Link>
         </div>
 
-        {/* Mobile Toggle */}
-        <div className="md:hidden">
+        {/* Mobile - Cart + Menu Toggle */}
+        <div className="md:hidden flex items-center gap-4">
+          <Link to="/cart" className="relative">
+            <button className="relative p-2">
+              <ShoppingCart size={22} className="text-[#b5765b]" />
+              {getCartItemsCount() > 0 && (
+                <span className="absolute top-0 right-0 w-5 h-5 bg-red-500 text-white text-xs font-bold rounded-full flex items-center justify-center">
+                  {getCartItemsCount()}
+                </span>
+              )}
+            </button>
+          </Link>
           <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
             {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>

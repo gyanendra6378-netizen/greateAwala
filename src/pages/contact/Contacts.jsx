@@ -1,9 +1,17 @@
 import { MapPin, Mail, Phone } from "lucide-react";
+import SEO from "../../components/SEO";
 import banner from "../../assets/banner-6.png"; // 👈 apna background image yaha import karein
 
 export default function Contacts() {
   return (
     <div className="bg-white text-gray-800 pt-20">
+      <SEO
+        title="Contact MyAwala - Get in Touch with Us"
+        description="Contact MyAwala for questions about Amla products, orders, or health benefits. Reach out via email, phone, or visit our office in New Delhi, India."
+        keywords="contact myawala, amla products contact, customer support, contact great awala, amla product queries"
+        url="https://myawala.com/contact"
+        image="https://myawala.com/banner-6.png"
+      />
       {/* Contact Hero Section */}
       <section
         className="relative h-[420px] bg-cover bg-center flex items-center justify-center text-white"

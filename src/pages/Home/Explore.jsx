@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Calendar, MessageCircle } from "lucide-react";
 
 import img1 from "../../assets/sweet-1 (1).png";
@@ -64,9 +65,10 @@ const Explore = () => {
       {/* Blog Rows */}
       <div className="grid md:grid-cols-2 gap-8">
         {blogs.map((blog, index) => (
-          <div
+          <Link
             key={blog.id}
-            className="grid md:grid-cols-2 gap-6 md:h-[40vh] items-center p-4"
+            to={`/blog/${blog.id}`}
+            className="grid md:grid-cols-2 gap-6 md:h-[40vh] items-center p-4 hover:bg-gray-50 rounded-lg transition cursor-pointer"
           >
             {/* Alternate Layout */}
             {index % 2 === 0 ? (
@@ -116,7 +118,7 @@ const Explore = () => {
                 />
               </>
             )}
-          </div>
+          </Link>
         ))}
       </div>
     </section>

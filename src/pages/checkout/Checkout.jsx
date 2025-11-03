@@ -1,5 +1,6 @@
 // components/Checkout.jsx
 import { useState } from "react";
+import SEO from "../../components/SEO";
 import Billing from "./Billing";
 import CheckoutMethod from "./CheckoutMethod";
 import { Pencil, User, MapPin, Truck, Wallet, Receipt } from "lucide-react";
@@ -79,6 +80,13 @@ const Checkout = () => {
 
   return (
     <div className="text-gray-700 pt-20">
+      <SEO
+        title="Secure Checkout - Complete Your Amla Product Order"
+        description="Complete your secure checkout for Amla products. Choose payment method, shipping address, and place your order for fresh, natural Amla products with delivery."
+        keywords="checkout, place order, buy amla online, secure payment, amla products delivery, online order amla"
+        url="https://myawala.com/checkout"
+        image="https://myawala.com/banner-5.png"
+      />
       {/* Hero Section */}
       <section className="bg-[#f8f8f5] py-20 text-center">
         <h2 className="text-2xl font-semibold text-green-700">

@@ -1,7 +1,9 @@
-import { Star, ShoppingCart, Home, Truck, Shield, Gem } from "lucide-react";
-import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
+import { Star, ShoppingCart, Home, Truck, Shield, Gem, Heart, Eye } from "lucide-react";
+import { Link, useNavigate } from "react-router-dom";
+import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
+import SEO from "../../components/SEO";
+import { useCart } from "../../contexts/CartContext";
 import imgJuice from "../../assets/juices.png";
 import imgCandy from "../../assets/driy-1.jpg";
 import imgPickle from "../../assets/tree-4.png";
@@ -157,13 +159,37 @@ export const productsData = [
 
 
 export default function Products() {
+  const navigate = useNavigate();
+  const { addToCart } = useCart();
   const [priceRange, setPriceRange] = useState(400);
   const [selectedCategory, setSelectedCategory] = useState("All");
+  const [selectedSort, setSelectedSort] = useState("default");
+  const [showToast, setShowToast] = useState(false);
+  const [toastMessage, setToastMessage] = useState("");
+  const [likedProducts, setLikedProducts] = useState([]);
+  const [quickViewProduct, setQuickViewProduct] = useState(null);
 
   const categories = ["All", "Juice", "Snacks", "Pickle", "Powder"];
 
+  // Sort products
+  const getSortedProducts = () => {
+    let sorted = [...productsData];
+    
+    if (selectedSort === "price-low") {
+      sorted.sort((a, b) => a.price - b.price);
+    } else if (selectedSort === "price-high") {
+      sorted.sort((a, b) => b.price - a.price);
+    } else if (selectedSort === "rating") {
+      sorted.sort((a, b) => b.rating - a.rating);
+    } else if (selectedSort === "discount") {
+      sorted.sort((a, b) => (b.discount || 0) - (a.discount || 0));
+    }
+    
+    return sorted;
+  };
+
   // Filtered products
-  const filteredProducts = productsData.filter(
+  const filteredProducts = getSortedProducts().filter(
     (p) =>
       p.price <= priceRange &&
       (selectedCategory === "All" || p.category === selectedCategory)
@@ -173,8 +199,51 @@ export default function Products() {
     .sort((a, b) => b.rating - a.rating)
     .slice(0, 3);
 
+  // Toast notification
+  const showToastMessage = (message) => {
+    setToastMessage(message);
+    setShowToast(true);
+    setTimeout(() => setShowToast(false), 3000);
+  };
+
+  // Add to cart
+  const handleAddToCart = (product, e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    addToCart(product, 1);
+    showToastMessage(`✓ ${product.name} added to cart!`);
+  };
+
+  // Add to wishlist
+  const handleAddToWishlist = (product, e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    const isLiked = likedProducts.includes(product.id);
+    if (isLiked) {
+      setLikedProducts(likedProducts.filter(id => id !== product.id));
+      showToastMessage(`Removed ${product.name} from wishlist`);
+    } else {
+      setLikedProducts([...likedProducts, product.id]);
+      showToastMessage(`✓ ${product.name} added to wishlist!`);
+    }
+  };
+
+  // Quick view
+  const handleQuickView = (product, e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setQuickViewProduct(product);
+  };
+
   return (
     <>
+      <SEO
+        title="Buy Premium Amla Products Online - MyAwala"
+        description="Shop the best collection of Amla products online - Fresh Amla Juice, Amla Candy, Amla Pickle, and Amla Powder. 100% natural, organic products with amazing discounts and free shipping."
+        keywords="buy amla products online, amla products shopping, amla juice buy online, amla candy online, amla pickle, amla powder, natural products online, organic amla products"
+        url="https://myawala.com/products"
+        image="https://myawala.com/banner-5.png"
+      />
       {/* Hero Banner Section */}
       <section
         className="relative w-full h-[300px] md:h-[500px] bg-cover bg-center flex items-center justify-center"
@@ -276,67 +345,142 @@ export default function Products() {
 
 
           {/* Product Grid */}
-          <div className="lg:col-span-3 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 md:px-10">
-            {filteredProducts.map((product) => (
-              <div
-                key={product.id}
-                className="bg-white rounded-xl  md:h-[40vh] shadow-lg flex flex-col overflow-hidden hover:shadow-2xl transition"
-              >
-                <Link
-                  to={`/product/${product.id}`}
-                  state={{ product }}
+          <div className="lg:col-span-3">
+            {/* Sort and Filter Bar */}
+            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8 bg-white p-4 rounded-xl shadow">
+              <p className="text-gray-600 font-medium">
+                Showing <span className="text-[#d97f1f] font-bold">{filteredProducts.length}</span> products
+              </p>
+              <div className="flex items-center gap-3">
+                <span className="text-gray-600 font-medium">Sort by:</span>
+                <select
+                  value={selectedSort}
+                  onChange={(e) => setSelectedSort(e.target.value)}
+                  className="border border-gray-300 rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#d97f1f]"
                 >
+                  <option value="default">Default</option>
+                  <option value="price-low">Price: Low to High</option>
+                  <option value="price-high">Price: High to Low</option>
+                  <option value="rating">Highest Rated</option>
+                  <option value="discount">Best Discounts</option>
+                </select>
+              </div>
+            </div>
 
-                  {/* Image Section with Discount Badge */}
-                  <div className="relative  w-full h-40 flex items-center justify-center bg-gray-50">
-                    <img
-                      src={product.image}
-                      alt={product.name}
-                      className="h-full object-contain"
-                    />
-                    {product.discount && (
-                      <span className="absolute top-3 right-3 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-full shadow">
-                        -{product.discount}%
-                      </span>
-                    )}
-                  </div>
-
-                  {/* Content Section */}
-                  <div className="pt-5 flex flex-col items-center ">
-                    {/* Rating */}
-                    <div className="flex items-center gap-1">
-                      {[...Array(product.rating)].map((_, i) => (
-                        <Star
-                          key={i}
-                          size={14}
-                          className="text-yellow-500 fill-yellow-500"
-                        />
-                      ))}
-                      <span className="text-xs text-gray-500 ml-1">
-                        ({product.reviews})
-                      </span>
-                    </div>
-
-                    {/* Product Title */}
-                    <h2 className="text-lg font-semibold text-gray-800 mt-1 line-clamp-1">
-                      {product.name}
-                    </h2>
-
-                    {/* Price */}
-                    <div className="mt-2">
-                      <span className="text-lg font-bold text-[#d97f1f]">
-                        ₹{product.price}
-                      </span>
-                      {product.originalPrice && (
-                        <span className="text-sm text-gray-500 line-through ml-2">
-                          ₹{product.originalPrice}
+            {/* Product Cards */}
+            {filteredProducts.length > 0 ? (
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+                {filteredProducts.map((product) => (
+                <motion.div
+                  key={product.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="bg-white rounded-xl md:h-[45vh] shadow-lg flex flex-col overflow-hidden hover:shadow-2xl transition group"
+                >
+                  <Link
+                    to={`/product/${product.id}`}
+                    state={{ product }}
+                  >
+                    {/* Image Section with Discount Badge */}
+                    <div className="relative w-full h-48 flex items-center justify-center bg-gray-50 p-4">
+                      <img
+                        src={product.image}
+                        alt={product.name}
+                        className="h-full object-contain transition-transform duration-300 group-hover:scale-110"
+                      />
+                      {product.discount && (
+                        <span className="absolute top-3 right-3 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-full shadow">
+                          -{product.discount}%
                         </span>
                       )}
+                      
+                      {/* Wishlist Button */}
+                      <button
+                        onClick={(e) => handleAddToWishlist(product, e)}
+                        className={`absolute top-3 left-3 p-2 rounded-full transition ${
+                          likedProducts.includes(product.id)
+                            ? "bg-red-500 text-white"
+                            : "bg-white text-gray-600 hover:bg-gray-100"
+                        }`}
+                      >
+                        <Heart 
+                          size={18} 
+                          className={likedProducts.includes(product.id) ? "fill-white" : ""} 
+                        />
+                      </button>
+
+                      {/* Quick View Button */}
+                      <button
+                        onClick={(e) => handleQuickView(product, e)}
+                        className="absolute bottom-3 right-3 p-2 bg-white text-gray-600 rounded-full transition hover:bg-[#d97f1f] hover:text-white opacity-0 group-hover:opacity-100"
+                      >
+                        <Eye size={18} />
+                      </button>
                     </div>
-                  </div>
-                </Link>
+
+                    {/* Content Section */}
+                    <div className="p-4 flex flex-col">
+                      {/* Rating */}
+                      <div className="flex items-center gap-1">
+                        {[...Array(product.rating)].map((_, i) => (
+                          <Star
+                            key={i}
+                            size={14}
+                            className="text-yellow-500 fill-yellow-500"
+                          />
+                        ))}
+                        <span className="text-xs text-gray-500 ml-1">
+                          ({product.reviews})
+                        </span>
+                      </div>
+
+                      {/* Product Title */}
+                      <h2 className="text-base font-semibold text-gray-800 mt-2 line-clamp-2 min-h-[3rem]">
+                        {product.name}
+                      </h2>
+
+                      {/* Price */}
+                      <div className="mt-2">
+                        <span className="text-xl font-bold text-[#d97f1f]">
+                          ₹{product.price}
+                        </span>
+                        {product.originalPrice && (
+                          <span className="text-sm text-gray-500 line-through ml-2">
+                            ₹{product.originalPrice}
+                          </span>
+                        )}
+                      </div>
+
+                      {/* Add to Cart Button */}
+                      <button
+                        onClick={(e) => handleAddToCart(product, e)}
+                        className="mt-4 w-full bg-[#d97f1f] hover:bg-[#b8651a] text-white px-4 py-2.5 rounded-lg font-semibold transition flex items-center justify-center gap-2"
+                      >
+                        <ShoppingCart size={18} />
+                        Add to Cart
+                      </button>
+                    </div>
+                  </Link>
+                </motion.div>
+              ))}
               </div>
-            ))}
+            ) : (
+              <div className="col-span-3 text-center py-20">
+                <div className="text-6xl mb-4">🔍</div>
+                <h3 className="text-2xl font-bold text-gray-800 mb-2">No Products Found</h3>
+                <p className="text-gray-600 mb-6">Try adjusting your filters to find what you're looking for.</p>
+                <button
+                  onClick={() => {
+                    setPriceRange(400);
+                    setSelectedCategory("All");
+                    setSelectedSort("default");
+                  }}
+                  className="bg-[#d97f1f] hover:bg-[#b8651a] text-white px-6 py-3 rounded-lg font-semibold transition"
+                >
+                  Reset Filters
+                </button>
+              </div>
+            )}
           </div>
 
 
@@ -361,6 +505,117 @@ export default function Products() {
           </span>
         </motion.div>
       </section>
+
+      {/* Toast Notification */}
+      <AnimatePresence>
+        {showToast && (
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 50 }}
+            className="fixed bottom-6 right-6 bg-green-500 text-white px-6 py-4 rounded-lg shadow-2xl z-50 flex items-center gap-3"
+          >
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+            </svg>
+            <span className="font-semibold">{toastMessage}</span>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Quick View Modal */}
+      <AnimatePresence>
+        {quickViewProduct && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4"
+            onClick={() => setQuickViewProduct(null)}
+          >
+            <motion.div
+              initial={{ scale: 0.9 }}
+              animate={{ scale: 1 }}
+              exit={{ scale: 0.9 }}
+              className="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden relative"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button
+                onClick={() => setQuickViewProduct(null)}
+                className="absolute top-4 right-4 w-10 h-10 bg-gray-100 hover:bg-gray-200 rounded-full flex items-center justify-center transition z-10"
+              >
+                <X size={20} />
+              </button>
+
+              <div className="grid md:grid-cols-2 gap-6 p-6">
+                {/* Left - Image */}
+                <div className="flex items-center justify-center bg-gray-50 rounded-xl p-4">
+                  <img
+                    src={quickViewProduct.image}
+                    alt={quickViewProduct.name}
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+
+                {/* Right - Details */}
+                <div className="space-y-4">
+                  <div>
+                    <div className="flex items-center gap-2 mb-2">
+                      {[...Array(quickViewProduct.rating)].map((_, i) => (
+                        <Star key={i} size={16} className="text-yellow-500 fill-yellow-500" />
+                      ))}
+                      <span className="text-sm text-gray-500">({quickViewProduct.reviews} reviews)</span>
+                    </div>
+                    <h2 className="text-2xl font-bold text-gray-900">{quickViewProduct.name}</h2>
+                  </div>
+
+                  <div className="flex items-center gap-3">
+                    <p className="text-3xl font-bold text-[#d97f1f]">₹{quickViewProduct.price}</p>
+                    {quickViewProduct.originalPrice && (
+                      <>
+                        <p className="text-xl text-gray-500 line-through">₹{quickViewProduct.originalPrice}</p>
+                        <span className="bg-red-500 text-white text-sm font-bold px-2 py-1 rounded-full">
+                          -{quickViewProduct.discount}% OFF
+                        </span>
+                      </>
+                    )}
+                  </div>
+
+                  <p className="text-gray-700">{quickViewProduct.description}</p>
+
+                  <div className="flex gap-3">
+                    <button
+                      onClick={(e) => {
+                        handleAddToCart(quickViewProduct, e);
+                        setQuickViewProduct(null);
+                      }}
+                      className="flex-1 bg-[#d97f1f] hover:bg-[#b8651a] text-white px-6 py-3 rounded-lg font-semibold transition flex items-center justify-center gap-2"
+                    >
+                      <ShoppingCart size={20} />
+                      Add to Cart
+                    </button>
+                    <button
+                      onClick={() => navigate(`/product/${quickViewProduct.id}`, { state: { product: quickViewProduct } })}
+                      className="flex-1 bg-gray-200 hover:bg-gray-300 text-gray-800 px-6 py-3 rounded-lg font-semibold transition"
+                    >
+                      View Details
+                    </button>
+                  </div>
+
+                  <div className="pt-4 border-t space-y-2 text-sm">
+                    <p className="flex items-center gap-2">
+                      <Truck size={16} className="text-green-600" /> Free shipping on orders above ₹500
+                    </p>
+                    <p className="flex items-center gap-2">
+                      <Shield size={16} className="text-blue-600" /> 100% secure payment
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 }

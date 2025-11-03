@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Star, ShoppingCart, Leaf, ShieldCheck, Truck } from "lucide-react";
+import SEO from "../components/SEO";
 import imgJuice from "../assets/juices.png";
 import imgCandy from "../assets/driy-1.jpg";
 import imgPickle from "../assets/tree-4.png";
@@ -32,6 +33,13 @@ const blogPosts = [
 export default function Services() {
   return (
     <div className="bg-[#faf9f6]">
+      <SEO
+        title="Our Amla Services - Premium Natural Products | MyAwala"
+        description="Explore MyAwala's range of premium Amla services including Juice, Candy, Pickle, Powder, Hair Oil, and Chutney. Get special offers, discounts, and free shipping on all products."
+        keywords="amla services, amla specialties, premium amla products, amla juice services, organic amla services, natural health products services"
+        url="https://myawala.com/services"
+        image="https://myawala.com/banner-5.png"
+      />
       {/* Hero Section */}
       <div
         className="h-[500px] bg-cover bg-center flex items-center justify-center text-white text-center relative"

@@ -1,10 +1,18 @@
 import { useNavigate } from "react-router-dom";
+import SEO from "../components/SEO";
 
 const Error404 = () => {
   const navigate = useNavigate();
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-[#fefcfa] px-4">
+      <SEO
+        title="404 - Page Not Found"
+        description="The page you are looking for could not be found. Return to MyAwala homepage to browse our premium Amla products."
+        keywords="404, page not found, error page"
+        url="https://myawala.com/404"
+        image="https://myawala.com/bg-1.png"
+      />
       <div className="text-center border border-gray-200 rounded-md p-8 max-w-lg shadow-sm bg-white">
         <h1 className="text-6xl font-semibold text-[#b5765b]">404</h1>
         <h2 className="text-2xl font-semibold text-gray-800 mt-4">Page not found</h2>

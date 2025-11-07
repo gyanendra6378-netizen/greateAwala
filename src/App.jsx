@@ -1,5 +1,4 @@
 import { BrowserRouter as Router, Routes,Route } from "react-router-dom"
-import { HelmetProvider } from "react-helmet-async"
 import './App.css'
 import Navbar from "./components/Navbar"
 import Home from "./pages/Home/Home"
@@ -24,29 +23,27 @@ function App() {
 
   return (
     <CartProvider>
-      <HelmetProvider>
-        <Router>
-          <ScrollToTop />
-          <Navbar/>
-          <SmoothScroll/>
-          <Routes>
-            <Route path="/" element={<Home/>} />
-            <Route path="/about" element={<About/>} />
-            <Route path="/contact" element={<Contacts/>} />
-            <Route path="/blogs" element={<Blogs/>} />
-            <Route path="/blog/:id" element={<BlogDetail/>} />
-            <Route path="/services" element={<Services/>} />
-            <Route path="/cart" element={<Cart/>} />
-            <Route path="/product/:id" element={<ProductDetails />} />
-            <Route path="/checkout" element={<Checkout/>} />
-            <Route path="/products" element={<Products/>} />
-            <Route path="/articles/:id" element={<BlogDetail/>} />
-            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-            <Route path="*" element={<Error404/>} />
-          </Routes>
-          <Footer/>
-        </Router>
-      </HelmetProvider>
+      <Router>
+        <ScrollToTop />
+        <Navbar/>
+        <SmoothScroll/>
+        <Routes>
+          <Route path="/" element={<Home/>} />
+          <Route path="/about" element={<About/>} />
+          <Route path="/contact" element={<Contacts/>} />
+          <Route path="/blogs" element={<Blogs/>} />
+          <Route path="/blog/:id" element={<BlogDetail/>} />
+          <Route path="/services" element={<Services/>} />
+          <Route path="/cart" element={<Cart/>} />
+          <Route path="/product/:id" element={<ProductDetails />} />
+          <Route path="/checkout" element={<Checkout/>} />
+          <Route path="/products" element={<Products/>} />
+          <Route path="/articles/:id" element={<BlogDetail/>} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="*" element={<Error404/>} />
+        </Routes>
+        <Footer/>
+      </Router>
     </CartProvider>
   )
 }

@@ -14,7 +14,7 @@ import oil from "../../assets/oli-1.png";
 const articlesData = [
   {
     id: 1,
-    title: "Discover the Power of Fresh Amla from Great Awala Farms",
+    title: "Discover the Power of Fresh Amla from Greate Awala Farms",
     img: imgOfTree,
     date: "Aug 28, 2025",
     views: 12000,
@@ -23,48 +23,48 @@ const articlesData = [
   },
   {
     id: 2,
-    title: "Why Great Awala Chyawanprash is Perfect for Your Immunity",
+    title: "Why Greate Awala Chyawanprash is Perfect for Your Immunity",
     img: imgJuice,
     date: "Aug 30, 2025",
     views: 18000,
     likes: 450,
-    content: "Great Awala Chyawanprash ek herbal tonic hai jo immunity ko boost karta hai...",
+    content: "Greate Awala Chyawanprash ek herbal tonic hai jo immunity ko boost karta hai...",
   },
   {
     id: 3,
-    title: "The Story of Aquirding – Inspiring Wellness with Great Awala",
+    title: "The Story of Aquirding – Inspiring Wellness with Greate Awala",
     img: imgPawder,
     date: "Sep 01, 2025",
     views: 22000,
     likes: 600,
-    content: "Aquirding ki kahani aur Great Awala ke wellness products ka safar...",
+    content: "Aquirding ki kahani aur Greate Awala ke wellness products ka safar...",
   },
   {
     id: 4,
-    title: "Daily Wellness: How Great Awala Products Boost Your Lifestyle",
+    title: "Daily Wellness: How Greate Awala Products Boost Your Lifestyle",
     img: sempu,
     date: "Sep 02, 2025",
     views: 10000,
     likes: 210,
-    content: "Daily use ke liye Great Awala products lifestyle improve karte hain...",
+    content: "Daily use ke liye Greate Awala products lifestyle improve karte hain...",
   },
   {
     id: 5,
-    title: "Great Awala’s Tradition of Trusted Quality & Natural Goodness",
+    title: "Greate Awala’s Tradition of Trusted Quality & Natural Goodness",
     img: driedFood,
     date: "Sep 03, 2025",
     views: 15000,
     likes: 345,
-    content: "Great Awala ke products natural aur trusted quality ke saath aate hain...",
+    content: "Greate Awala ke products natural aur trusted quality ke saath aate hain...",
   },
   {
     id: 6,
-    title: "From Farm to Jar – The Great Awala Journey",
+    title: "From Farm to Jar – The Greate Awala Journey",
     img: oil,
     date: "Sep 03, 2025",
     views: 19000,
     likes: 410,
-    content: "Farm se jar tak ka safar jo Great Awala ko unique banata hai...",
+    content: "Farm se jar tak ka safar jo Greate Awala ko unique banata hai...",
   },
 ];
 
@@ -97,7 +97,7 @@ export default function Articles() {
   return (
     <section className="md:px-14 py-16 bg-[#f9f9f9]">
       <h2 className="text-2xl md:text-3xl font-semibold mb-6 border-b border-[#d97f1f] inline-block">
-        Great Awala Wellness Blog
+        Greate Awala Wellness Blog
       </h2>
 
       <div className="grid grid-cols-1 px-4 md:px-20 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">

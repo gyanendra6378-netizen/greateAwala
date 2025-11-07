@@ -14,7 +14,7 @@ const Explore = () => {
       img: img1,
       category: "Amla Sweets",
       title: "Delicious Amla Sweets Packed with Nutrition",
-      author: "MyAwala",
+      author: "Greate Awala",
       comments: 5,
       desc: "Enjoy our traditional Amla sweets – a perfect balance of taste and health. Rich in Vitamin C, these sweets are great for boosting immunity and energy.",
     },
@@ -23,7 +23,7 @@ const Explore = () => {
       img: img2,
       category: "Chyawanprash",
       title: "Healthy Amla Chyawanprash for Daily Wellness",
-      author: "MyAwala",
+      author: "Greate Awala",
       comments: 3,
       desc: "Made with pure Amla and natural herbs, our Chyawanprash strengthens immunity, enhances digestion, and keeps you energetic throughout the day.",
     },
@@ -32,7 +32,7 @@ const Explore = () => {
       img: img3,
       category: "Dry Amla",
       title: "Premium Quality Dried Amla for Healthy Snacking",
-      author: "MyAwala",
+      author: "Greate Awala",
       comments: 4,
       desc: "Dried Amla pieces are a tasty and healthy snack option. Packed with antioxidants, they help improve digestion and overall wellness.",
     },
@@ -41,7 +41,7 @@ const Explore = () => {
       img: img4,
       category: "Amla Small Pieces",
       title: "Natural Amla Pieces for Everyday Use",
-      author: "MyAwala",
+      author: "Greate Awala",
       comments: 2,
       desc: "Our small Amla pieces can be used in cooking, snacking, or health remedies. 100% natural and sun-dried to preserve nutrients.",
     },
@@ -57,7 +57,7 @@ const Explore = () => {
             <span className="w-2 h-2 bg-[#d89a7e] rounded-full"></span>
             <span className="w-2 h-2 bg-[#d89a7e] rounded-full"></span>
           </span>
-          Fresh From MyAwala
+          Fresh From Greate Awala
         </p>
         <h2 className="text-3xl font-bold">Explore Our Amla Products</h2>
       </div>

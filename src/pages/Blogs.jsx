@@ -27,7 +27,7 @@ export const dummyBlogs = [
       "Enhances skin complexion",
       "Prevents premature aging"
     ],
-    author: "Team My Awala",
+    author: "Team Greate Awala",
     time: "2 hours ago",
     image: blogImg1,
   },
@@ -63,7 +63,7 @@ export const dummyBlogs = [
       "Family-friendly recipes",
       "Taste and health combined"
     ],
-    author: "Team My Awala",
+    author: "Team Greate Awala",
     time: "8 hours ago",
     image: blogImg3,
   },
@@ -99,7 +99,7 @@ export const dummyBlogs = [
       "Promotes hair growth",
       "100% natural and safe"
     ],
-    author: "My Awala Care",
+    author: "Greate Awala Care",
     time: "2 days ago",
     image: blogImg5,
   },
@@ -117,7 +117,7 @@ export const dummyBlogs = [
       "Reduces overeating",
       "Natural weight loss support"
     ],
-    author: "Team My Awala",
+    author: "Team Greate Awala",
     time: "3 days ago",
     image: blogImg1,
   },
@@ -153,7 +153,7 @@ export const dummyBlogs = [
       "Multiple product options",
       "Easy integration into routine"
     ],
-    author: "Team My Awala",
+    author: "Team Greate Awala",
     time: "5 days ago",
     image: blogImg4,
   },
@@ -208,11 +208,11 @@ export default function Blogs() {
   return (
     <section className="bg-white">
       <SEO
-        title="Amla Health Blogs - Wellness Tips & Recipes | MyAwala"
+        title="Amla Health Blogs - Wellness Tips & Recipes | Greate Awala"
         description="Read our latest Amla health blogs featuring wellness tips, recipes, benefits, and guides. Learn about Amla juice, candy, powder, and other natural products for better health."
         keywords="amla blogs, amla health tips, amla benefits, wellness blogs, amla recipes, health articles, ayurvedic health tips, natural remedies"
-        url="https://myawala.com/blogs"
-        image="https://myawala.com/banner-6.png"
+        url="https://greateawala.com/blogs"
+        image="https://greateawala.com/banner-6.png"
       />
       {/* Banner */}
       <div
@@ -229,7 +229,7 @@ export default function Blogs() {
           className="relative z-10 text-center"
         >
           <h1 className="text-4xl md:text-5xl font-bold">
-            My Awala – Amla Blogs
+            Greate Awala – Amla Blogs
           </h1>
           <p className="mt-2 text-lg">
             <span className="text-[#a75c22]">Home</span> &gt; Blogs

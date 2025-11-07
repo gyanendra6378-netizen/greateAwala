@@ -12,8 +12,10 @@ import Services from "./pages/Services"
 import Cart from "./pages/Cart"
 import Checkout from "./pages/checkout/Checkout"
 import SmoothScroll from "./components/SmoothScroll"
+import ScrollToTop from "./components/ScrollToTop"
 import Products from "./pages/Products/Products"
 import ProductDetails from "./pages/Products/ProductDetails"
+import PrivacyPolicy from "./pages/PrivacyPolicy"
 import Error404 from "./pages/Error404"
 import { CartProvider } from "./contexts/CartContext"
 
@@ -24,6 +26,7 @@ function App() {
     <CartProvider>
       <HelmetProvider>
         <Router>
+          <ScrollToTop />
           <Navbar/>
           <SmoothScroll/>
           <Routes>
@@ -38,6 +41,7 @@ function App() {
             <Route path="/checkout" element={<Checkout/>} />
             <Route path="/products" element={<Products/>} />
             <Route path="/articles/:id" element={<BlogDetail/>} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="*" element={<Error404/>} />
           </Routes>
           <Footer/>

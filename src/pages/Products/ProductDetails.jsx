@@ -21,7 +21,7 @@ export default function ProductDetails() {
 
   // Get image URL - if it's imported from assets, it will be a string path
   const imageUrl = typeof product.image === 'string' && !product.image.startsWith('/') 
-    ? `https://myawala.com/assets/${product.image}` 
+    ? `https://greateawala.com/assets/${product.image}` 
     : product.image;
 
   // Toast notification
@@ -53,10 +53,10 @@ export default function ProductDetails() {
   return (
     <>
       <SEO
-        title={`${product.name} - Buy Online | MyAwala`}
+        title={`${product.name} - Buy Online | Greate Awala`}
         description={product.description}
         keywords={`${product.name}, ${product.category}, buy ${product.name.toLowerCase()}, amla products, ${product.category.toLowerCase()}, natural health products`}
-        url={`https://myawala.com/product/${product.id}`}
+        url={`https://greateawala.com/product/${product.id}`}
         image={imageUrl}
         type="product"
       />

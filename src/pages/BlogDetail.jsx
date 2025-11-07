@@ -31,11 +31,11 @@ export default function BlogDetail() {
   return (
     <>
       <SEO
-        title={`${blog.title} - MyAwala Blog`}
+        title={`${blog.title} - Greate Awala Blog`}
         description={blog.description}
         keywords={`${blog.title.toLowerCase()}, amla blog, ${blog.author.toLowerCase()}, amla health, natural products, wellness tips`}
-        url={`https://myawala.com/blog/${blog.id}`}
-        image="https://myawala.com/banner-6.png"
+        url={`https://greateawala.com/blog/${blog.id}`}
+        image="https://greateawala.com/banner-6.png"
         type="article"
       />
       <div className="bg-white">
@@ -125,9 +125,9 @@ export default function BlogDetail() {
                   Amla offers comprehensive wellness support in the most natural way possible.
                 </p>
                 <p className="text-gray-700 leading-relaxed mt-4">
-                  At MyAwala, we are committed to bringing you the purest, most authentic Amla products. Our products 
+                  At Greate Awala, we are committed to bringing you the purest, most authentic Amla products. Our products 
                   are made with care, ensuring that you receive all the natural goodness that Amla has to offer. 
-                  Start your journey towards better health today with MyAwala!
+                  Start your journey towards better health today with Greate Awala!
                 </p>
               </div>
             </div>
@@ -158,7 +158,7 @@ export default function BlogDetail() {
                   <strong>Daily Consumption:</strong> For maximum benefits, consume Amla products consistently. Whether it's juice in the morning, powder with meals, or candy as a snack, consistency is key to experiencing long-term health improvements.
                 </p>
                 <p className="text-lg leading-relaxed">
-                  <strong>Quality Matters:</strong> Always choose 100% natural and organic Amla products. Avoid products with artificial preservatives, colors, or sweeteners. MyAwala ensures purity in every product.
+                  <strong>Quality Matters:</strong> Always choose 100% natural and organic Amla products. Avoid products with artificial preservatives, colors, or sweeteners. Greate Awala ensures purity in every product.
                 </p>
                 <p className="text-lg leading-relaxed">
                   <strong>Stay Hydrated:</strong> When consuming Amla products, especially powder, ensure you drink plenty of water throughout the day. This helps your body absorb nutrients more effectively.

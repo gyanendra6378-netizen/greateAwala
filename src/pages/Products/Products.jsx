@@ -238,11 +238,11 @@ export default function Products() {
   return (
     <>
       <SEO
-        title="Buy Premium Amla Products Online - MyAwala"
-        description="Shop the best collection of Amla products online - Fresh Amla Juice, Amla Candy, Amla Pickle, and Amla Powder. 100% natural, organic products with amazing discounts and free shipping."
+        title="Buy Premium Amla Products Online - Greate Awala"
+        description="Shop the best collection of Amla products online - Fresh Amla Juice, Amla Candy, Amla Pickle, and Amla Powder from Greate Awala. 100% natural, organic products with amazing discounts and free shipping."
         keywords="buy amla products online, amla products shopping, amla juice buy online, amla candy online, amla pickle, amla powder, natural products online, organic amla products"
-        url="https://myawala.com/products"
-        image="https://myawala.com/banner-5.png"
+        url="https://greateawala.com/products"
+        image="https://greateawala.com/banner-5.png"
       />
       {/* Hero Banner Section */}
       <section

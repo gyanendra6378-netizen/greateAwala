@@ -7,7 +7,7 @@ import img1 from "/bg-1.png";
 /* ---------- FAQ Data ---------- */
 const faqs = [
   {
-    question: "What makes Great Awala products special?",
+    question: "What makes Greate Awala products special?",
     answer:
       "Our products are made from 100% pure and fresh Amla, sourced directly from trusted farms. We ensure no harmful chemicals are added.",
   },
@@ -17,12 +17,12 @@ const faqs = [
       "Yes! Amla is rich in Vitamin C and antioxidants, which naturally boost immunity and improve overall health.",
   },
   {
-    question: "Are Great Awala products suitable for daily use?",
+    question: "Are Greate Awala products suitable for daily use?",
     answer:
       "Absolutely. Our powders, oils, and chyawanprash are designed for daily wellness routines, supporting digestion, hair, and skin health.",
   },
   {
-    question: "Where can I buy Great Awala products?",
+    question: "Where can I buy Greate Awala products?",
     answer:
       "You can purchase directly from our official website or through authorized local distributors.",
   },
@@ -73,17 +73,17 @@ const About = () => {
   return (
     <div>
       <SEO
-        title="About MyAwala - Pure Amla Products for Wellness"
-        description="Learn about MyAwala's mission to deliver 100% natural and chemical-free Amla products. Discover our journey from farm to table, ensuring purity and wellness in every product."
-        keywords="about myawala, about great awala, amla company, natural amla products, ayurvedic products, organic amla, health and wellness"
-        url="https://myawala.com/about"
-        image="https://myawala.com/bg-1.png"
+        title="About Greate Awala - Pure Amla Products for Wellness"
+        description="Learn about Greate Awala's mission to deliver 100% natural and chemical-free Amla products. Discover our journey from farm to table, ensuring purity and wellness in every product."
+        keywords="about greate awala, amla company, natural amla products, ayurvedic products, organic amla, health and wellness"
+        url="https://greateawala.com/about"
+        image="https://greateawala.com/bg-1.png"
       />
       {/* About Section */}
       <div className="max-w-7xl mx-auto px-4 py-10 bg-white text-gray-800">
         {/* Header */}
         <div className="mb-4">
-          <h1 className="text-4xl font-bold">About Great Awala</h1>
+          <h1 className="text-4xl font-bold">About Greate Awala</h1>
           <div className="border-t-4 border-gray-200 w-16 mt-2"></div>
           <div className="text-sm text-right mt-2 text-gray-500">
             <a href="#" className="text-[#cc8a51] hover:underline">
@@ -99,7 +99,7 @@ const About = () => {
             <div className="rounded-2xl overflow-hidden md:h-[60vh]">
               <img
                 src={img1}
-                alt="Great Awala"
+                alt="Greate Awala"
                 className="object-cover md:h-[60vh] transition-transform duration-700 ease-[cubic-bezier(.2,.8,.2,1)] hover:scale-[1.05]"
               />
             </div>
@@ -115,7 +115,7 @@ const About = () => {
               to Every Home
             </h2>
             <p className="mt-4 font-medium">
-              Great Awala is dedicated to creating high-quality Amla-based
+              Greate Awala is dedicated to creating high-quality Amla-based
               products that boost immunity, improve wellness, and enhance daily
               living. From traditional chyawanprash to modern powders and oils,
               we bring you the true goodness of nature in every product.
@@ -123,7 +123,7 @@ const About = () => {
             <p className="mt-4 text-gray-700">
               Our mission is simple – deliver pure, natural, and chemical-free
               Amla products that help you live a healthier and more energetic
-              life. With years of trust and authenticity, Great Awala stands as
+              life. With years of trust and authenticity, Greate Awala stands as
               your partner in holistic health and natural care.
             </p>
           </div>
@@ -208,7 +208,7 @@ const About = () => {
             <h3 className="font-semibold text-lg">Trusted Quality</h3>
             <p className="text-gray-600 text-sm mt-2">
               Backed by tradition and modern processing standards, ensuring
-              premium quality in every Great Awala product.
+              premium quality in every Greate Awala product.
             </p>
           </div>
         </div>

@@ -43,8 +43,8 @@ const Cart = () => {
         title="Shopping Cart - Review Your Amla Products"
         description="Review your selected Amla products in the shopping cart. Continue shopping or proceed to secure checkout for fresh, natural Amla products."
         keywords="shopping cart, amla products cart, add to cart, checkout amla, buy amla online, natural products cart"
-        url="https://myawala.com/cart"
-        image="https://myawala.com/banner-5.png"
+        url="https://greateawala.com/cart"
+        image="https://greateawala.com/banner-5.png"
       />
       
       <div className="max-w-7xl mx-auto">

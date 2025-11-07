@@ -3,17 +3,17 @@ import bgimg from "../../assets/lastBanner.png";
 
 const faqs = [
   {
-    question: "What is Great Awala?",
+    question: "What is Greate Awala?",
     answer:
-      "Great Awala is a brand dedicated to bringing you fresh, natural, and healthy Amla (Awala) products made with care and authenticity.",
+      "Greate Awala is a brand dedicated to bringing you fresh, natural, and healthy Amla (Awala) products made with care and authenticity.",
   },
   {
     question: "Are your products organic?",
     answer:
-      "Yes! All Great Awala products are made from naturally grown Amla, ensuring purity and maximum health benefits.",
+      "Yes! All Greate Awala products are made from naturally grown Amla, ensuring purity and maximum health benefits.",
   },
   {
-    question: "Where can I buy Great Awala products?",
+    question: "Where can I buy Greate Awala products?",
     answer:
       "You can buy our products directly from our official website or our authorized offline partners.",
   },

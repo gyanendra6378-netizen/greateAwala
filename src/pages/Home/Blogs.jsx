@@ -30,7 +30,7 @@ const Blogs = () => {
 
           {/* Heading */}
           <h2 className="text-3xl font-bold leading-snug">
-            Great Awala – Pure Amla Goodness for a Healthy Life
+            Greate Awala – Pure Amla Goodness for a Healthy Life
           </h2>
 
           {/* Highlighted Text */}
@@ -41,7 +41,7 @@ const Blogs = () => {
 
           {/* Description */}
           <p className="text-gray-600">
-            At <span className="font-semibold text-[#a75c22]">Great Awala</span>, we bring you 
+            At <span className="font-semibold text-[#a75c22]">Greate Awala</span>, we bring you 
             100% natural, fresh, and preservative-free products. From delicious 
             Amla candies and juices to herbal powders and tonics, each product 
             is crafted to boost your immunity and overall well-being.

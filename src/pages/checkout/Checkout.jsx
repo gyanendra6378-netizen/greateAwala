@@ -84,8 +84,8 @@ const Checkout = () => {
         title="Secure Checkout - Complete Your Amla Product Order"
         description="Complete your secure checkout for Amla products. Choose payment method, shipping address, and place your order for fresh, natural Amla products with delivery."
         keywords="checkout, place order, buy amla online, secure payment, amla products delivery, online order amla"
-        url="https://myawala.com/checkout"
-        image="https://myawala.com/banner-5.png"
+        url="https://greateawala.com/checkout"
+        image="https://greateawala.com/banner-5.png"
       />
       {/* Hero Section */}
       <section className="bg-[#f8f8f5] py-20 text-center">

@@ -1,14 +1,14 @@
 import { Helmet } from 'react-helmet-async';
 
 const SEO = ({ 
-  title = "MyAwala - Pure Amla Products for Healthy Living", 
-  description = "Discover 100% natural Amla (Awala) products including fresh juice, candies, pickles, powder, and more. Boost immunity, improve health, and enjoy authentic taste with MyAwala.",
+  title = "Greate Awala - Pure Amla Products for Healthy Living", 
+  description = "Discover 100% natural Amla (Awala) products including fresh juice, candies, pickles, powder, and more. Boost immunity, improve health, and enjoy authentic taste with Greate Awala.",
   keywords = "amla products, awala juice, amla candy, amla powder, amla pickle, natural health products, immunity booster, vitamin c, ayurvedic products, healthy snacks",
   image = "/bg-1.png",
-  url = "https://myawala.com",
+  url = "https://greateawala.com",
   type = "website"
 }) => {
-  const siteName = "MyAwala";
+  const siteName = "Greate Awala";
   const fullTitle = title.includes(siteName) ? title : `${title} | ${siteName}`;
 
   return (
@@ -18,7 +18,7 @@ const SEO = ({
       <meta name="title" content={fullTitle} />
       <meta name="description" content={description} />
       <meta name="keywords" content={keywords} />
-      <meta name="author" content="MyAwala" />
+      <meta name="author" content="Greate Awala" />
       <meta name="robots" content="index, follow" />
       <meta name="language" content="English" />
       <meta name="revisit-after" content="7 days" />

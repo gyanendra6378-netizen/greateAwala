@@ -31,7 +31,7 @@ const Categories = () => {
           Popular Amla Categories
         </h2>
         <p className="text-sm text-gray-600 max-w-2xl mx-auto">
-          Discover the best of MyAwala – from fresh hand-picked Amla fruits
+          Discover the best of Greate Awala – from fresh hand-picked Amla fruits
           to delicious sweets, juices, and natural products for a healthier
           lifestyle.
         </p>

@@ -1,0 +1,24 @@
+# robots.txt for MyAwala.com
+
+# Allow all search engines to crawl the site
+User-agent: *
+Allow: /
+
+# Disallow admin and private areas (if any)
+Disallow: /admin/
+Disallow: /api/
+Disallow: /checkout/payment
+
+# Allow access to important files
+Allow: /products
+Allow: /blogs
+Allow: /about
+Allow: /contact
+Allow: /services
+
+# Sitemap location
+Sitemap: https://myawala.com/sitemap.xml
+
+# Crawl-delay (optional - helps if you have a lot of requests)
+Crawl-delay: 1
+

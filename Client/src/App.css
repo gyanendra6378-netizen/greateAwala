@@ -1,0 +1,22 @@
+@import "tailwindcss";
+
+/* Hide scrollbar for better UX */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+
+.brush-mask {
+  -webkit-mask-image: url('/brush-mask.png'); /* your brush stroke PNG */
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: cover;
+  -webkit-mask-position: center;
+  mask-image: url('/brush-mask.png');
+  mask-repeat: no-repeat;
+  mask-size: cover;
+  mask-position: center;
+}

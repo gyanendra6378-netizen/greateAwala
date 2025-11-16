@@ -61,11 +61,11 @@ const Home = () => {
   return (
     <SmoothScroll>
       <SEO
-        title="MyAwala - Pure Amla Products for Healthy Living"
-        description="Discover 100% natural Amla (Awala) products including fresh juice, candies, pickles, powder, and more. Boost immunity, improve health, and enjoy authentic taste with MyAwala."
-        keywords="amla products, awala juice, amla candy, amla powder, amla pickle, natural health products, immunity booster, vitamin c, ayurvedic products, healthy snacks, great awala"
-        url="https://myawala.com"
-        image="https://myawala.com/bg-1.png"
+        title="Greate Awala - Pure Amla Products for Healthy Living"
+        description="Discover 100% natural Amla (Awala) products including fresh juice, candies, pickles, powder, and more. Boost immunity, improve health, and enjoy authentic taste with Greate Awala."
+        keywords="amla products, awala juice, amla candy, amla powder, amla pickle, natural health products, immunity booster, vitamin c, ayurvedic products, healthy snacks, greate awala"
+        url="https://greateawala.com"
+        image="https://greateawala.com/bg-1.png"
       />
       <div>
         <section className="relative h-screen w-full overflow-hidden">
@@ -96,7 +96,7 @@ const Home = () => {
               100% Natural • Fresh • Healthy
             </p>
             <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-4">
-              My Awala <br/> Taste & Health in Every Bite
+              Greate Awala <br/> Taste & Health in Every Bite
             </h1>
             <p className="max-w-xl text-base md:text-lg text-gray-200">
               Discover the power of Amla (Awala) – bringing you freshness,

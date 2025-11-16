@@ -31,7 +31,7 @@ const Updateds = () => {
       <div className="w-full">
         <img
           src={img3}
-          alt="Great Awala Products"
+          alt="Greate Awala Products"
           className="w-full h-[400px] md:h-[500px] lg:h-[600px] object-cover rounded-2xl"
         />
       </div>

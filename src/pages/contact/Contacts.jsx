@@ -6,11 +6,11 @@ export default function Contacts() {
   return (
     <div className="bg-white text-gray-800 pt-20">
       <SEO
-        title="Contact MyAwala - Get in Touch with Us"
-        description="Contact MyAwala for questions about Amla products, orders, or health benefits. Reach out via email, phone, or visit our office in New Delhi, India."
-        keywords="contact myawala, amla products contact, customer support, contact great awala, amla product queries"
-        url="https://myawala.com/contact"
-        image="https://myawala.com/banner-6.png"
+        title="Contact Greate Awala - Get in Touch with Us"
+        description="Contact Greate Awala for questions about Amla products, orders, or health benefits. Reach out via email, phone, or visit our office in New Delhi, India."
+        keywords="contact greate awala, amla products contact, customer support, greate awala customer service, amla product queries"
+        url="https://greateawala.com/contact"
+        image="https://greateawala.com/banner-6.png"
       />
       {/* Contact Hero Section */}
       <section
@@ -24,7 +24,7 @@ export default function Contacts() {
 
           </div>
           <h2 className="text-4xl md:text-5xl font-bold mb-2">
-            Contact  MyAwala
+            Contact Greate Awala
           </h2>
           <p className="text-lg text-gray-200">
             Have questions about Amla products? We’re here to help you.

@@ -7,7 +7,7 @@ import { Calendar, User } from "lucide-react";
 
 const mainPost = {
   category: "Amla Benefits",
-  author: "MyAwala",
+  author: "Greate Awala",
   date: "March 3, 2025",
   title: "The Secret Health Benefits of Amla (Indian Gooseberry)",
   excerpt:
@@ -89,7 +89,7 @@ const HealthNews = () => {
                 <p className="text-xs text-gray-600 leading-snug">{post.excerpt}</p>
                 <div className="text-xs text-gray-400 mt-1 flex gap-4">
                   <span>
-                    <User /> MyAwala
+                    <User /> Greate Awala
                   </span>
                   <span>
                     <Calendar /> March 3, 2025

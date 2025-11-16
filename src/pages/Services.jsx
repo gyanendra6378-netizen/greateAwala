@@ -18,14 +18,14 @@ const categories = [
 ];
 
 const products = [
-  { title: "MyAwala Fresh Amla Juice", price: "₹349", image: imgJuice },
-  { title: "MyAwala Amla Candy", price: "₹199", image: imgCandy },
-  { title: "MyAwala Amla Pickle", price: "₹249", image: imgPickle },
-  { title: "MyAwala Amla Powder", price: "₹299", image: imgPowder },
+  { title: "Greate Awala Fresh Amla Juice", price: "₹349", image: imgJuice },
+  { title: "Greate Awala Amla Candy", price: "₹199", image: imgCandy },
+  { title: "Greate Awala Amla Pickle", price: "₹249", image: imgPickle },
+  { title: "Greate Awala Amla Powder", price: "₹299", image: imgPowder },
 ];
 
 const blogPosts = [
-  { title: "Top 5 Benefits of MyAwala Juice", image: imgJuice },
+  { title: "Top 5 Benefits of Greate Awala Juice", image: imgJuice },
   { title: "Why Amla Candy is the Healthiest Snack", image: imgCandy },
   { title: "Amla Pickle Recipes Loved by All", image: imgPickle },
 ];
@@ -34,11 +34,11 @@ export default function Services() {
   return (
     <div className="bg-[#faf9f6]">
       <SEO
-        title="Our Amla Services - Premium Natural Products | MyAwala"
-        description="Explore MyAwala's range of premium Amla services including Juice, Candy, Pickle, Powder, Hair Oil, and Chutney. Get special offers, discounts, and free shipping on all products."
+        title="Our Amla Services - Premium Natural Products | Greate Awala"
+        description="Explore Greate Awala's range of premium Amla services including Juice, Candy, Pickle, Powder, Hair Oil, and Chutney. Get special offers, discounts, and free shipping on all products."
         keywords="amla services, amla specialties, premium amla products, amla juice services, organic amla services, natural health products services"
-        url="https://myawala.com/services"
-        image="https://myawala.com/banner-5.png"
+        url="https://greateawala.com/services"
+        image="https://greateawala.com/banner-5.png"
       />
       {/* Hero Section */}
       <div
@@ -49,7 +49,7 @@ export default function Services() {
       >
         <div className="bg-black/50 bg-opacity-50 w-full h-full absolute top-0 left-0 z-0"></div>
         {/* <h1 className="relative z-10 text-4xl md:text-5xl font-bold">
-          MyAwala – Pure Goodness of Amla
+          Greate Awala – Pure Goodness of Amla
         </h1> */}
       </div>
 
@@ -78,7 +78,7 @@ export default function Services() {
           className="bg-green-100 p-6 rounded-lg text-center shadow-md"
         >
           <h3 className="text-xl font-bold mb-2">LIMITED OFFER – 20% OFF</h3>
-          <p>Buy MyAwala Juice Pack today and save!</p>
+          <p>Buy Greate Awala Juice Pack today and save!</p>
         </motion.div>
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -176,7 +176,7 @@ export default function Services() {
 
       {/* Latest Post */}
       <section className="max-w-7xl mx-auto px-4 py-12">
-        <h2 className="text-2xl font-bold mb-6 text-center">Latest from MyAwala</h2>
+        <h2 className="text-2xl font-bold mb-6 text-center">Latest from Greate Awala</h2>
         <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
           {blogPosts.map((post, i) => (
             <motion.div
@@ -197,7 +197,7 @@ export default function Services() {
 
       {/* Newsletter */}
       <section className="bg-[#f5f1e9] py-12 text-center">
-        <h2 className="text-2xl font-bold mb-4">Stay Updated with MyAwala</h2>
+        <h2 className="text-2xl font-bold mb-4">Stay Updated with Greate Awala</h2>
         <p className="text-gray-600 mb-6">
           Subscribe for the latest offers, health tips, and product launches.
         </p>

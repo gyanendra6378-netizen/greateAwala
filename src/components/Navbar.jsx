@@ -42,6 +42,7 @@ const Navbar = () => {
     { name: "Services", path: "/services" },
     { name: "Blogs", path: "/blogs" },
     { name: "Contact us", path: "/contact" },
+    { name: "Privacy Policy", path: "/privacy-policy" },
     // { name: "Cart", path: "/cart" },
   ];
 
@@ -64,7 +65,7 @@ const Navbar = () => {
         {/* Logo */}
         <div className="flex items-center gap-2">
           {/* <div className="border-2 border-[#b5765b] w-5 h-5"></div> */}
-          <span className="font-bold text-lg text-gray-800">MyAwala</span>
+          <span className="font-bold text-lg text-gray-800">Greate Awala</span>
         </div>
 
         {/* Nav Links */}

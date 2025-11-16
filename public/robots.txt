@@ -1,4 +1,4 @@
-# robots.txt for MyAwala.com
+# robots.txt for GreateAwala.com
 
 # Allow all search engines to crawl the site
 User-agent: *
@@ -17,7 +17,7 @@ Allow: /contact
 Allow: /services
 
 # Sitemap location
-Sitemap: https://myawala.com/sitemap.xml
+Sitemap: https://greateawala.com/sitemap.xml
 
 # Crawl-delay (optional - helps if you have a lot of requests)
 Crawl-delay: 1
